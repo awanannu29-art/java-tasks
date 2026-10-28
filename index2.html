@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hours to Seconds Converter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+            width: 300px;
+        }
+
+        h1 {
+            color: #2563eb;
+            font-size: 25px;
+        }
+
+        input {
+            padding: 10px;
+            width: 90%;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #16a34a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hours to Seconds</h1>
+
+        <input type="number" id="hours" placeholder="Enter hours">
+
+        <br>
+
+        <button onclick="convertHours()">Convert</button>
+
+        <h2 id="result">Result will appear here</h2>
+    </div>
+
+    <script>
+        function convertHours() {
+            let hours = document.getElementById("hours").value;
+            let seconds = hours * 3600;
+
+            if (hours === "" || hours < 0) {
+                document.getElementById("result").innerHTML =
+                    "Please enter valid hours";
+            } else {
+                document.getElementById("result").innerHTML =
+                    seconds + " seconds";
+            }
+        }
+    </script>
+
+</body>
+</html>
+

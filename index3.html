@@ -1,0 +1,83 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Number in Array</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Find Next Number in Array</h2>
+
+        <p>Array: [10, 20, 30, 40, 50]</p>
+
+        <input type="number" id="number"
+               placeholder="Enter a number">
+
+        <button onclick="findNext()">Find Next Number</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function findNext() {
+            let numbers = [10, 20, 30, 40, 50];
+            let input = document.getElementById("number").value;
+            let number = Number(input);
+            let index = numbers.indexOf(number);
+
+            if (input === "") {
+                document.getElementById("result").innerHTML =
+                    "Please enter a number.";
+            }
+            else if (index === -1) {
+                document.getElementById("result").innerHTML =
+                    "Number not found in array.";
+            }
+            else if (index === numbers.length - 1) {
+                document.getElementById("result").innerHTML =
+                    "There is no next number.";
+            }
+            else {
+                document.getElementById("result").innerHTML =
+                    "Next number is: " + numbers[index + 1];
+            }
+        }
+    </script>
+
+</body>
+</html>
+```

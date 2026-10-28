@@ -1,0 +1,74 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Next Number</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Find Next Number</h2>
+
+        <p>Enter an integer or decimal number:</p>
+
+        <input type="number" step="any" id="number"
+               placeholder="Enter a number">
+
+        <button onclick="findNext()">Find Next Number</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function findNext() {
+            let input = document.getElementById("number").value;
+
+            if (input === "") {
+                document.getElementById("result").innerHTML =
+                    "Please enter a number.";
+                return;
+            }
+
+            let number = Number(input);
+            let nextNumber = number + 1;
+
+            document.getElementById("result").innerHTML =
+                "Next number is: " + nextNumber;
+        }
+    </script>
+
+</body>
+</html>
